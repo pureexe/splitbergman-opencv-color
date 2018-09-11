@@ -21,6 +21,6 @@ Mat SplitBergmanSolver(Mat original_image, Mat lambda, double theta, double tole
 		image_norm = norm(u - last_image) / norm(u);
 		i++;
 	}
-	printf("processed with %d loops\n", i);
+	//printf("processed with %d loops\n", i);
 	return u;
 }
