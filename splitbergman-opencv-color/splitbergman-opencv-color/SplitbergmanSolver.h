@@ -4,7 +4,8 @@
 #include "wSolver.h"
 #include "uSolver.h"
 
-Mat SplitBergmanSolver(Mat original_image, Mat lambda, double theta, double tolerant, int max_iteration) {
+Mat SplitBergmanSolver(Mat original_image, Mat lambda, double theta, double tolerant, int max_iteration, int current_step) {
+	printf("h_width: %d\n", current_step);
 	double image_norm = 9999999;
 	int i = 1;
 	Mat last_image;
@@ -16,8 +17,8 @@ Mat SplitBergmanSolver(Mat original_image, Mat lambda, double theta, double tole
 	while (image_norm > tolerant && i < max_iteration) {		
 		last_image = u.clone();
 		w = wSolver(u, b, theta);
-		u = uSolver(u, w, original_image, b, lambda, theta);
-		b = b + Gradient(u) - w; 
+		u = uSolver(u, w, original_image, b, lambda, theta, current_step);
+		b = b + Gradient(u, current_step) - w;
 		image_norm = norm(u - last_image) / norm(u);
 		i++;
 	}

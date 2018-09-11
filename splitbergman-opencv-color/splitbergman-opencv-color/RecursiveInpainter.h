@@ -32,5 +32,8 @@ Mat RecusriveInpainter(Mat original_image, Mat inpainted_domain, double lambda, 
 			max_iteration = 3;
 		}
 	}
-	return SplitBergmanSolver(toinpaint_image, inpainted_lambda, theta, tolerant, max_iteration);
+	/*if (current_step == 1) {
+		return toinpaint_image;
+	}*/
+	return SplitBergmanSolver(toinpaint_image, inpainted_lambda, theta, tolerant, max_iteration, current_step);
 }

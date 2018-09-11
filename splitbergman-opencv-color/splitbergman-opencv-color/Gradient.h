@@ -5,8 +5,7 @@
 * Status: same with matlab
 **/
 
-Mat Gradient(Mat u) {
-	double h = 1;
+Mat Gradient(Mat u,double h = 1) {
 	int height = u.rows;
 	int width = u.cols;
 	Mat grad = Mat::zeros(Size(width, height * 2), CV_64F);
@@ -18,5 +17,5 @@ Mat Gradient(Mat u) {
 	u_up = u_up - u;
 	u_up.copyTo(grad(Rect(0,0,width,height)));
 	u_left.copyTo(grad(Rect(0, height, width, height)));
-	return grad;
+	return grad / h;
 }
