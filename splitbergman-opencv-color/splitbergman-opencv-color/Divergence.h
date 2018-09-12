@@ -1,7 +1,7 @@
 #pragma once
 #include "pch.h"
-Mat Divergence(Mat T,int current_step) {
-	double h = pow(2, current_step - 1);
+Mat Divergence(Mat T,int depth) {
+	double h = pow(2, depth - 1);
 	//data extraction part
 	int total_height = T.rows;
 	int width = T.cols;

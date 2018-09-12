@@ -27,22 +27,13 @@
     <ClInclude Include="MeanSquareError.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MergeResult.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="PeakSignalToNoiseRatio.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="RecursiveInpainter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="RootMeanSquareError.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Signnum.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SplitbergmanSolver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="uGaussKernel.h">
@@ -52,6 +43,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="wSolver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RecursiveColorInpainter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SplitBergmanSolver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SplitBergmanColorSolver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MergeColorResult.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

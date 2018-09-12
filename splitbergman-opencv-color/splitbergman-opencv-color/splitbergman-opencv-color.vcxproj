@@ -160,13 +160,14 @@
     <ClInclude Include="Divergence.h" />
     <ClInclude Include="Gradient.h" />
     <ClInclude Include="MeanSquareError.h" />
-    <ClInclude Include="MergeResult.h" />
+    <ClInclude Include="MergeColorResult.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="PeakSignalToNoiseRatio.h" />
-    <ClInclude Include="RecursiveInpainter.h" />
+    <ClInclude Include="RecursiveColorInpainter.h" />
     <ClInclude Include="RootMeanSquareError.h" />
     <ClInclude Include="Signnum.h" />
-    <ClInclude Include="SplitbergmanSolver.h" />
+    <ClInclude Include="SplitBergmanColorSolver.h" />
+    <ClInclude Include="SplitBergmanSolver.h" />
     <ClInclude Include="uGaussKernel.h" />
     <ClInclude Include="uSolver.h" />
     <ClInclude Include="wSolver.h" />

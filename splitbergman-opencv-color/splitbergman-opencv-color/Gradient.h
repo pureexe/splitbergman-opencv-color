@@ -5,18 +5,18 @@
 * Status: same with matlab
 **/
 
-Mat Gradient(Mat u,double current_step) {
-	double h = pow(2, current_step - 1);
+Mat Gradient(Mat u,double depth) {
+	double h = pow(2, depth - 1);
 	int height = u.rows;
 	int width = u.cols;
 	Mat grad = Mat::zeros(Size(width, height * 2), CV_64F);
 	Mat u_left = u.clone();
 	Mat u_up = u.clone();
 	u(Rect(1, 0, width-1,height)).copyTo(u_left(Rect(0, 0, width - 1, height)));
-	u_left = u_left - u;
+	u_left = (u_left - u) / h;
 	u(Rect(0, 1, width, height - 1)).copyTo(u_up(Rect(0, 0, width, height - 1)));
-	u_up = u_up - u;
+	u_up = (u_up - u) / h;
 	u_up.copyTo(grad(Rect(0,0,width,height)));
 	u_left.copyTo(grad(Rect(0, height, width, height)));
-	return grad / h;
+	return grad ;
 }
