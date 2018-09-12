@@ -4,8 +4,8 @@
 
 //w = max(abs(gradU + b) - (1 / theta), 0) * signnum(gradU+b);
 
-Mat wSolver(Mat u,Mat b,double theta) {
-	Mat gradU = Gradient(u);
+Mat wSolver(Mat u,Mat b,double theta,int current_step) {
+	Mat gradU = Gradient(u,current_step);
 	Mat gradB = gradU + b;
 	Mat w;
 	w = max(abs(gradB) - (1 / theta), 0);

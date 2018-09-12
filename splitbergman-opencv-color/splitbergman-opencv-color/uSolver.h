@@ -6,7 +6,7 @@ Mat uSolver(Mat u, Mat w, Mat original_image, Mat b, Mat lambda, double theta,in
 	int height = u.rows;
 	int width = u.cols;
 	int i, j;
-	Mat divergence = Divergence(w - b);
+	Mat divergence = Divergence(w - b, current_step);
 	//top - left corner
 	u.at<double>(0, 0) = uGaussKernel(
 		u.at<double>(0, 0), original_image.at<double>(0, 0),

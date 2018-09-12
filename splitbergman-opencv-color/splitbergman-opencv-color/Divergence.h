@@ -1,6 +1,7 @@
 #pragma once
 #include "pch.h"
-Mat Divergence(Mat T) {
+Mat Divergence(Mat T,int current_step) {
+	double h = pow(2, current_step - 1);
 	//data extraction part
 	int total_height = T.rows;
 	int width = T.cols;
@@ -13,9 +14,9 @@ Mat Divergence(Mat T) {
 	//discrete difference part
 	Mat T1_previous = zeroImage.clone();
 	T1(Rect(0, 0, width, height - 1)).copyTo(T1_previous(Rect(0, 1, width, height - 1)));
-	T1 = T1 - T1_previous;
+	T1 = (T1 - T1_previous) / h;
 	Mat T2_previous = zeroImage.clone();
 	T2(Rect(0, 0, width - 1, height)).copyTo(T2_previous(Rect(1, 0, width - 1, height)));
-	T2 = T2 - T2_previous;
+	T2 = (T2 - T2_previous) / h;
 	return T1 + T2;
 }

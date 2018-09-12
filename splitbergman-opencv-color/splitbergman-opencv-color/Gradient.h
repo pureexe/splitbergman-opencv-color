@@ -5,7 +5,8 @@
 * Status: same with matlab
 **/
 
-Mat Gradient(Mat u,double h = 1) {
+Mat Gradient(Mat u,double current_step) {
+	double h = pow(2, current_step - 1);
 	int height = u.rows;
 	int width = u.cols;
 	Mat grad = Mat::zeros(Size(width, height * 2), CV_64F);
